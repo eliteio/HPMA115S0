@@ -7,7 +7,12 @@
  */
 
 #include <HPMA115S0.h>
-#include <SoftwareSerial.h>
+
+#if defined (PARTICLE)
+  #include <ParticleSoftSerial.h>
+#else
+  #include <SoftwareSerial.h>
+#endif
 
 //Create an instance of software serial
 SoftwareSerial hpmaSerial(10, 11); // Feather TX, Feather RX
